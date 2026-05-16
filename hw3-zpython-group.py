@@ -110,10 +110,6 @@ def z_score(x, mu, sigma):
     
     return z # Place the calculated z-score result between the return statement and this comment so it will be returned by the z_score function
 
-print("mean of population1 is", mean(population1))
-print("standard deviation of population1 is", stdev(population1, mean(population1)))
-
-
 
 #################
 # ADDITIONAL TEST CASES
@@ -141,5 +137,8 @@ print("Actual:", z_score(smallest, pop2_avg, pop2_sd))
 
 # Test Case 3 - all population 1 values should have a z-score between -3 and 3 and match the test table provided in the excel file and homework template. 
 
+print("\nTest Case 3")
 for x in population1:
-    print("z-score of", x, "is", z_score(x, mean(population1), stdev(population1, mean(population1))))
+    print("zScore for " + str(x) + " is ", z_score(x, mean(population1), stdev(population1, mean(population1))))
+
+    
