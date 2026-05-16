@@ -88,6 +88,9 @@ def test_z_score_function():
 #                                                     #
 # Be sure to include names of the group members that  #
 # participated in the group assignment work           #
+#  -Jonathon Erickson
+#  -Zachary Britton
+#  -Jenny Flores
 #######################################################
 
 def z_score(x, mu, sigma):
@@ -109,6 +112,34 @@ def z_score(x, mu, sigma):
 
 print("mean of population1 is", mean(population1))
 print("standard deviation of population1 is", stdev(population1, mean(population1)))
+
+
+
+#################
+# ADDITIONAL TEST CASES
+#################
+
+# Test Case 1
+# z-score of the mean should be 0
+pop3_avg = mean(population3)
+pop3_sd = stdev(population3, pop3_avg)
+
+print("\nTest Case 1")
+print("Expected: 0")
+print("Actual:", z_score(pop3_avg, pop3_avg, pop3_sd))
+
+
+# Test Case 2
+# smallest value in population2 should have a negative z-score
+pop2_avg = mean(population2)
+pop2_sd = stdev(population2, pop2_avg)
+smallest = least(population2)
+
+print("\nTest Case 2")
+print("Expected: Negative z-score")
+print("Actual:", z_score(smallest, pop2_avg, pop2_sd))
+
+# Test Case 3 - all population 1 values should have a z-score between -3 and 3 and match the test table provided in the excel file and homework template. 
 
 for x in population1:
     print("z-score of", x, "is", z_score(x, mean(population1), stdev(population1, mean(population1))))
